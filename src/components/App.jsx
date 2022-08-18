@@ -1,10 +1,11 @@
 import './App.css';
+import './NavBar';
 
 function App() {
   return (
-    <div className="App">
-      <h1>React first app</h1>
-    </div>
+    <div className=''>
+      
+  </div>
   );
 }
 
