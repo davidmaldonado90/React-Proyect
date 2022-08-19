@@ -1,11 +1,12 @@
-import './App.css';
+import './NavBar.css'
+import {CartWidget} from './CartWidget/CartWidget';
 
-function Nav() {
+function NavBar () {
   return (
-    <div className=''>
+    <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">PESHKU TIENDA DE MAR</a>
+          <a className="navbar-brand" href="#"><img className='logo' src="images/logo.png"/></a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon" />
             </button>
@@ -23,11 +24,13 @@ function Nav() {
                 <a className="nav-link" href="#">Contacto</a>
               </li>
             </ul>
+            <CartWidget/>
         </div>
       </div>
     </nav>
-  </div>
+  </>
   );
 }
 
-export default Nav;
+export default NavBar;
+
