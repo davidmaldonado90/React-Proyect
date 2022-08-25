@@ -3,6 +3,6 @@ import { BiCart } from 'react-icons/bi';
 
 export const CartWidget = () => {
   return (
-    <div><BiCart/></div>
+    <div><BiCart  className='icon'/></div>
   )
 }
