@@ -1,8 +1,12 @@
 import React from 'react'
-import { BiCart } from 'react-icons/bi';
+import { BiCart} from 'react-icons/bi'
+import {IoPersonOutline} from 'react-icons/io5'
 
 export const CartWidget = () => {
   return (
-    <div><BiCart  className='icon'/></div>
+    <>
+      <IoPersonOutline className='icon'/>
+      <BiCart  className='icon'/>
+    </>
   )
 }

@@ -1,0 +1,17 @@
+.counter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    align-items:  center;
+    margin: 20px;
+    padding: 10px;
+}
+
+.confirm{
+    padding: 10px;
+}

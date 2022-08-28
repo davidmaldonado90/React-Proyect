@@ -1,8 +1,17 @@
-import React from 'react'
+import '../App.css'
+import Counter from '../Counter/Counter'
 
-export const ItemListContainer = ({title}) => {
+export const ItemListContainer = () => {
+
+  const onAdd = (count) => {
+    console.log(`${count} productos seleccionados`)
+  }
     
   return (
-    <h1>{title}</h1>
+    
+    <div>
+      <Counter stock = {20} onAdd = {onAdd}/>
+    </div>
+
   )
 }
