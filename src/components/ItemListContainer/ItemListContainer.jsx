@@ -21,17 +21,12 @@ export const ItemListContainer = () => {
     getData.then((res) => setProducts(res))
     .catch((err) => console.error(err))
   }, [])
-  
-
-
-
 
   return (
     
-    <div>
-      <ItemList list= {productos}/>
+    <>
+      <ItemList list= {products}/>
       <Counter stock = {20} onAdd = {onAdd}/>
-    </div>
-
+    </>
   )
 }

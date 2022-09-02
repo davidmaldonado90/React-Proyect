@@ -6,9 +6,10 @@ const Item = ({item}) => {
     return ( 
 
         <div className='cardContainer'>
+
             <div className="cardItem ">
 
-            <img className='cardImage' src={item.imagen} alt={item.name}/>
+                <img className='cardImage' src={item.imagen} alt={item.name}/>
             </div>
 
             <div className="card-body">
@@ -16,8 +17,7 @@ const Item = ({item}) => {
                 <p className="card-text">Precio: ${item.precio}</p>
             </div>
         </div>
-        
-        
+                
 )
 }
 
