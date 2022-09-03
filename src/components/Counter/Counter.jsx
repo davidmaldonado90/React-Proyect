@@ -35,10 +35,6 @@ const Counter = ({stock, onAdd}) => {
     return (
         <div className="counter">
             <div className="card text-white bg-primary mb-3">
-
-
-                <h2>Counter</h2>
-                <p>Stock: {stock}</p>
                 <p>Cantidad: {count}</p>
 
                 <div className="card-body">
@@ -47,7 +43,7 @@ const Counter = ({stock, onAdd}) => {
                     <button className="btn btn-secondary" onClick={add} disabled={disabledAdd}>+</button>
                 </div>
                 <div className='confirm'>
-                    <button className="btn btn-success" onClick={()=> onAdd(count)}>Confirm</button>
+                    <button className="btn btn-success" onClick={()=> onAdd(count)}>Añadir al Carrito</button>
                 </div>
             </div>
 

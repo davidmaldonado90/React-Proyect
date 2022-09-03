@@ -7,7 +7,7 @@ const Item = ({item}) => {
 
         <div className='cardContainer'>
 
-            <div className="cardItem ">
+            <div className="cardItem">
 
                 <img className='cardImage' src={item.imagen} alt={item.name}/>
             </div>

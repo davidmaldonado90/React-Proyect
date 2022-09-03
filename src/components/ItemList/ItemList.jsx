@@ -14,4 +14,3 @@ const ItemList = ({list}) => {
 
 export default ItemList;
 
-// return ( ítem && <div>{ítem.nombre}</div)
