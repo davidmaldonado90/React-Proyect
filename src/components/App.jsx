@@ -12,17 +12,19 @@ function App() {
   return (
     <>
     <BrowserRouter>
+    <div className='app row'>
 
     <NavBar/>
 
     <Routes>
 
       <Route path='/' element={<ItemListContainer/>}/>
-      <Route path='/categoria/:tipo' element={<ItemListContainer/>}/>
+      <Route path='/categoria/:categoria' element={<ItemListContainer/>}/>
       <Route path='/detalles/:id' element={<ItemDetailContainer/>}/>   
 
     </Routes>
 
+    </div>
     </BrowserRouter>
     </>
     

@@ -3,22 +3,25 @@ import Counter from '../Counter/Counter';
 
 const ItemDetail = ({item}) => {
 
+    const {nombre,precio, imagen, stock} = item
+
     const onAdd = (count) => {
         console.log(`${count} productos seleccionados`)
       }
+
     return (
         <>
-            <div className="card mb-3" style={{maxWidth: '900px'}}>
+            <div className="card mb-3">
                 <div className="row g-0">
-                    <div className="col-md-4">
-                        <img src={item.imagen} className="img-fluid rounded-start" alt="..." />
+                    <div className="col-md-3">
+                        <img src={imagen} className="img-fluid" alt={nombre} />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-5">
                         <div className="card-body">
-                            <h5 className="card-title">{item.nombre}</h5>
-                            <p className="card-text">Precio: ${item.precio}</p>
-                            <p className='card-text'>Stock Disponible: {item.stock}</p>
-                            <Counter stock = {item.stock} initial = {1} onAdd = {onAdd}/>
+                            <h5 className="card-title">{nombre}</h5>
+                            <p className="card-text">Precio: ${precio}</p>
+                            <p className='card-text'>Stock Disponible: {stock}</p>
+                            <Counter stock = {stock} initial = {1} onAdd = {onAdd}/>
                         </div>
                     </div>
                 </div>

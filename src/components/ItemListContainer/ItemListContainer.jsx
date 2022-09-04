@@ -12,27 +12,31 @@ export const ItemListContainer = () => {
 
   const getData = () => new Promise((res,) => {
 
-  if(categoria){
-    setTimeout(() => res(productos.filter (el => el.tipo === categoria))        
-    , 1000);
-  }
-  else{
-    setTimeout(() => res(productos)        
-    , 1000);
-  }
-})
+    categoria ? setTimeout(() => res(productos.filter (el => el.tipo === categoria)), 1000) : setTimeout(() => res(productos), 1000);
+  
+    }
+  )
 
 useEffect(() => {
     getData()
     .then(response => setProducts(response))
     .catch(err => console.error(err))
-
-  }, [categoria]);
+    return () => {
+      setProducts([])
+    }
+    }, [categoria]);
 
   return (
     
     <>
-      <ItemList list= {products}/>
+      {
+        products.length ? <ItemList list= {products}/> : 
+
+        <div className="d-flex justify-content-center">
+          <strong className='text-primary' style={{fontSize: '3rem'}} >Loading...</strong>
+          <div className="spinner-grow ml-auto text-primary" style={{width: '5rem', height: '5rem'}} role="status" aria-hidden="true"></div>
+        </div>
+      }
     </>
-  )
+    )
 }

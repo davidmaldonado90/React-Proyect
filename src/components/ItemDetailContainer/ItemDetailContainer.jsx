@@ -7,11 +7,11 @@ const ItemDetailContainer = () => {
 
     const {id} = useParams()
 
-    const [item, setItem] = useState({});
+    const [item, setItem] = useState();
 
     const getProductos = () => new Promise((res,) => {
         setTimeout(() => res(productos.find(prod => prod.id === Number(id)))
-        , 1000);
+        , 2000);
         
     })
     
@@ -23,7 +23,13 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-        <ItemDetail item= {item}/>
+            {
+              item ? <ItemDetail item= {item}/> : 
+              <div className="d-flex justify-content-center">
+                <strong className='text-primary'>Loading...</strong>
+                <div className="spinner-grow ml-auto text-primary" style={{width: '5rem', height: '5rem'}} role="status" aria-hidden="true"></div>
+              </div>
+            }
         </>
     );
 }

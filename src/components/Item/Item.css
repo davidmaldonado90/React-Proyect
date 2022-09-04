@@ -1,10 +1,9 @@
 .cardContainer{
     display: flex;
     flex-direction: column;
-    max-width: 200px;
 }
 
 .cardImage{
-    width: 150px;
-    height: 150px;
+    width: 350px;
+    height: 400px;
 }

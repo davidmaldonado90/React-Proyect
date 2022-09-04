@@ -90,7 +90,7 @@ const productos = [
   {
     id: 12,
     tipo: "Rebozado",
-    nombre: "Filet a la Romana",
+    nombre: "Filet Rebozado a la Romana",
     precio: 1000,
     imagen: "/images/Romanas.jpg",
     stock: 10
