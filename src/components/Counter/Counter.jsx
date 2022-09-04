@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import '../Counter/Counter.css'
 
-const Counter = ({stock, onAdd}) => {
-    const[count, setCount] = useState(1)
+const Counter = ({stock, onAdd, initial}) => {
+    const[count, setCount] = useState(initial)
     const[disabledAdd, setDisabledAdd] = useState (false)
     const[disabledSubstract, setDisabledSubstract] = useState (false)
 
@@ -18,9 +18,6 @@ const Counter = ({stock, onAdd}) => {
         }
     }
 
-    const reset = () => {
-        setCount(1)
-    }
 
     const add = () => {
         if(count < stock){
@@ -35,11 +32,10 @@ const Counter = ({stock, onAdd}) => {
     return (
         <div className="counter">
             <div className="card text-white bg-primary mb-3">
-                <p>Cantidad: {count}</p>
 
                 <div className="card-body">
                     <button className="btn btn-secondary" onClick={substract} disabled = {disabledSubstract}>-</button>
-                    <button className="btn btn-primary" onClick={reset}>Reset</button>
+                    <span>  {count} </span>
                     <button className="btn btn-secondary" onClick={add} disabled={disabledAdd}>+</button>
                 </div>
                 <div className='confirm'>

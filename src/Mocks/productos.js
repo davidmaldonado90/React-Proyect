@@ -1,6 +1,7 @@
 const productos = [
   {
     id: 1,
+    tipo: "Congelado",
     nombre: "Cola de Langostino",
     precio: 1600,
     imagen: '/images/ColaLangostino.jpg',
@@ -8,6 +9,7 @@ const productos = [
   },
   {
     id: 2,
+    tipo: "Congelado",
     nombre: "Langostino Entero",
     precio: 1200,
     imagen: '/images/LangostinoEntero.jpg',
@@ -15,6 +17,7 @@ const productos = [
   },
   {
     id: 3,
+    tipo: "Congelado",
     nombre: "Mix de Mariscos",
     precio: 1700,
     imagen: '/images/MixMariscos.jpg',
@@ -22,6 +25,7 @@ const productos = [
   },
   {
     id: 4,
+    tipo: "Fresco",
     nombre: "Filet de Abadejo",
     precio: 1500,
     imagen: "/images/Abadejo.jpg",
