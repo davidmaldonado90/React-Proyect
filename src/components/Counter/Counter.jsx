@@ -18,7 +18,6 @@ const Counter = ({stock, onAdd, initial}) => {
         }
     }
 
-
     const add = () => {
         if(count < stock){
             setCount(count + 1)

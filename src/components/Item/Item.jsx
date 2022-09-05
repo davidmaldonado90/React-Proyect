@@ -8,9 +8,9 @@ const Item = ({item}) => {
     
     return ( 
         
-            <div className='cardContainer m-3'>
+            <div className='cardContainer m-auto mt-3'>
                 <div className="cardItem ">
-                    <img className='cardImage' src={imagen} alt={nombre}/>
+                    <img className='cardImage rounded-4 ' src={imagen} alt={nombre}/>
                 </div>
                 <div className="card-body">
                     <p className="card-text">{nombre}</p>

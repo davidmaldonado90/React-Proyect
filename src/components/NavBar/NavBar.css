@@ -1,8 +1,11 @@
 .logo{
+    margin-left: 10px;
     width: 90px;
     height: 90px;
 }
 
 .icon{
+    margin-right: 20px;
     font-size: 1.5rem;
+    color: aliceblue;
 }

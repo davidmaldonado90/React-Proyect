@@ -11,12 +11,12 @@ const ItemDetail = ({item}) => {
 
     return (
         <>
-            <div className="card mb-3">
-                <div className="row g-0">
+            <div className="card container col-sm-11">
+                <div className="row col ">
                     <div className="col-md-3">
                         <img src={imagen} className="img-fluid" alt={nombre} />
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-sm-11 text-center p-5 col-md-5">
                         <div className="card-body">
                             <h5 className="card-title">{nombre}</h5>
                             <p className="card-text">Precio: ${precio}</p>
