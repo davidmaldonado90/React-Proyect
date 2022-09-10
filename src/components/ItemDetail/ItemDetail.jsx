@@ -2,12 +2,15 @@ import React from 'react';
 import Counter from '../Counter/Counter';
 
 const ItemDetail = ({item}) => {
-
     const {nombre,precio, imagen, stock} = item
 
     const onAdd = (count) => {
-        console.log(`${count} productos seleccionados`)
+        addToCart({id: item.id, cantidad : count})
       }
+
+      const addToCart = (item) => {
+        console.log(item);
+    } 
 
     return (
         <>
@@ -21,7 +24,7 @@ const ItemDetail = ({item}) => {
                             <h5 className="card-title">{nombre}</h5>
                             <p className="card-text">Precio: ${precio}</p>
                             <p className='card-text'>Stock Disponible: {stock}</p>
-                            <Counter stock = {stock} initial = {1} onAdd = {onAdd}/>
+                            <Counter stock = {stock} initial = {1} onAdd={onAdd}/>
                         </div>
                     </div>
                 </div>

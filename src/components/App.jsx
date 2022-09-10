@@ -4,6 +4,7 @@ import './App.css';
 import { ItemListContainer } from './ItemListContainer/ItemListContainer';
 import NavBar from './NavBar/NavBar';
 import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
+import { Cart } from './Cart/Cart';
 
 
 function App() {
@@ -12,19 +13,20 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <div className='app row'>
+      <div className='app row'>
 
-    <NavBar/>
+        <NavBar/>
 
-    <Routes>
+        <Routes>
 
-      <Route path='/' element={<ItemListContainer/>}/>
-      <Route path='/categoria/:categoria' element={<ItemListContainer/>}/>
-      <Route path='/detalles/:id' element={<ItemDetailContainer/>}/>   
+          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path='/categoria/:categoria' element={<ItemListContainer/>}/>
+          <Route path='/detalles/:id' element={<ItemDetailContainer/>}/>   
+          <Route path='/Cart' element= {<Cart/>}/>
 
-    </Routes>
+        </Routes>
 
-    </div>
+      </div>
     </BrowserRouter>
     </>
     
