@@ -6,15 +6,15 @@ const ItemDetail = ({item}) => {
     const {nombre,precio, imagen, stock} = item
 
     const [add, setadd] = useState(false);
-
+    const [addToCart, setaddToCart] = useState({});
+    
     const onAdd = (count) => {
+        setaddToCart({id: item.id, cantidad : count})
         setadd (true)
-        addToCart({id: item.id, cantidad : count})
       }
 
-      const addToCart = (item) => {
-        console.log(item);
-    } 
+    
+
 
     return (
         <>
