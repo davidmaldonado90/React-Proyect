@@ -15,7 +15,7 @@ function App() {
     <>
     <BrowserRouter>
       <div className='app row'>
-        {/* <cartContextProvider/> */}
+        <cartContextProvider/>
 
         <NavBar/>
 
@@ -27,7 +27,8 @@ function App() {
           <Route path='/Cart' element= {<Cart/>}/>
 
         </Routes>
-        {/* <cartContextProvider/> */}
+        <cartContextProvider/>
+        
       </div>
     </BrowserRouter>
     </>
