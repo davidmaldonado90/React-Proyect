@@ -5,7 +5,7 @@ import { ItemListContainer } from './ItemListContainer/ItemListContainer';
 import NavBar from './NavBar/NavBar';
 import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
 import { Cart } from './Cart/Cart';
-import { cartContextProvider } from '../Context/cartContext';
+import CartContext from '../Context/cartContext';
 
 
 function App() {
@@ -13,24 +13,24 @@ function App() {
   
   return (
     <>
-    <BrowserRouter>
-      <div className='app row'>
-        <cartContextProvider/>
+      <CartContext>
+        <BrowserRouter>
+        <div className='app row'>
 
-        <NavBar/>
+          <NavBar/>
 
-        <Routes>
+          <Routes>
 
-          <Route path='/' element={<ItemListContainer/>}/>
-          <Route path='/categoria/:categoria' element={<ItemListContainer/>}/>
-          <Route path='/detalles/:id' element={<ItemDetailContainer/>}/>   
-          <Route path='/Cart' element= {<Cart/>}/>
+            <Route path='/' element={<ItemListContainer/>}/>
+            <Route path='/categoria/:categoria' element={<ItemListContainer/>}/>
+            <Route path='/detalles/:id' element={<ItemDetailContainer/>}/>   
+            <Route path='/Cart' element= {<Cart/>}/>
 
-        </Routes>
-        <cartContextProvider/>
-        
-      </div>
-    </BrowserRouter>
+          </Routes>
+          
+        </div>
+        </BrowserRouter>
+      </CartContext>
     </>
     
     );
