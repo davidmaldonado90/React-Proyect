@@ -1,24 +1,22 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, } from 'react';
 import { Link } from 'react-router-dom';
 import Counter from '../Counter/Counter';
-import cartContext from '../../Context/cartContext';
+import {useCartContext} from '../../Context/cartContext';
 
 const ItemDetail = ({item}) => {
     
-    const { cart } = useContext (cartContext)
-    
-    const {nombre,precio, imagen, stock} = item
-
     const [add, setadd] = useState(false);
-    const [addToCart, setaddToCart] = useState({});
     
-    const onAdd = (count) => {
-        setaddToCart({id: item.id, cantidad : count})
+    const { addItem }  = useCartContext()
+    
+    const {nombre, precio, imagen, stock} = item
+   
+    const onAdd = (quantity) => {
         setadd (true)
+        addItem(item, quantity);
+        let stock = item.stock - quantity
+        item.stock = stock
       }
-    
-    console.log(cart);
-
 
     return (
         <>
@@ -47,3 +45,4 @@ const ItemDetail = ({item}) => {
 )};
 
 export default ItemDetail;
+
