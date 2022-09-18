@@ -30,8 +30,8 @@ export const ItemListContainer = () => {
         products.length !==0 ? <ItemList list= {products}/> : 
 
         <div className="d-flex justify-content-center">
-          <strong className='text-primary' style={{fontSize: '3rem'}} >Loading...</strong>
-          <div className="spinner-grow ml-auto text-primary" style={{width: '5rem', height: '5rem'}} role="status" aria-hidden="true"></div>
+          <strong className='text-dark fs-4' >Loading...</strong>
+          <div className="spinner-grow ml-auto text-dark" style={{width: '5rem', height: '5rem'}} role="status" aria-hidden="true"></div>
         </div>
       }
     </>

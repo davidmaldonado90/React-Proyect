@@ -18,14 +18,14 @@ const Counter = ({stock, onAdd, initial}) => {
     
     return (
         <div className="counter">
-            <div className="card text-white bg-muted">
+            <div className="card  bg-transparent border-0">
                 <div className="card-body">
-                    <button className="btn btn-secondary" onClick= {() => quantityProduct("-")}>-</button>
-                    <span className='text-black'>  {count} </span>
-                    <button className="btn btn-secondary" onClick={() => quantityProduct ("+")}>+</button>
+                    <button className="btn btn-dark" onClick= {() => quantityProduct("-")}>-</button>
+                    <span className='text-black'>  {count}  </span>
+                    <button className="btn btn-dark" onClick={() => quantityProduct ("+")}>+</button>
                 </div>
                 <div className='confirm'>
-                    <button className="btn btn-success" onClick={()=> onAdd(count)}>Añadir al Carrito</button>
+                    <button className="btn btn-success" onClick={()=>  onAdd(count)}>Añadir al Carrito</button>
                 </div>
             </div>
 

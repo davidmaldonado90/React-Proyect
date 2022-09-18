@@ -20,22 +20,25 @@ const ItemDetail = ({item}) => {
 
     return (
         <>
-            <div className="card container col-sm-11">
-                <div className="row col ">
+            <div className="card bg-transparent border-0 container col-sm-11">
+                <div className="row">
                     <div className="col-md-3">
-                        <img src={imagen} className="img-fluid" alt={nombre} />
+                        <img src={imagen} className="img-fluid rounded-start" alt={nombre} />
                     </div>
                     <div className="col-sm-11 text-center p-5 col-md-5">
                         <div className="card-body">
                             <h5 className="card-title">{nombre}</h5>
                             <p className="card-text">Precio: ${precio}</p>
                             <p className='card-text'>Stock Disponible: {stock}</p>
-                            <div> {add ? (
-                                <Link to='/Cart' type='button'>
+                            <div > {add ? (
+                                <Link to='/Cart' className='btn btn-dark'>
                                     Ver Carrito
-                                </Link> 
+                                </Link>                               
                                 ) : (
                                 <Counter stock = {stock} initial = {1} onAdd={onAdd}/>)}
+                                <Link to='/'className='btn btn-dark'>
+                                    Seguir Comprando
+                                </Link>  
                             </div>
                         </div>
                     </div>

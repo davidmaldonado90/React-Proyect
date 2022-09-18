@@ -1,11 +1,16 @@
 import './NavBar.css'
 import {CartWidget} from '../CartWidget/CartWidget';
+import LoginWidget from '../Login/LoginWidget';
 import { Link } from 'react-router-dom';
+import CartContext, { useCartContext } from '../../Context/cartContext';
 
 function NavBar () {
+
+  const { cart } = useCartContext(CartContext)
+  
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase fs-4 rounded-6">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase fs-4 rounded-6 me-4">
         <div className="container-fluid">
             <Link to='/'>
               <img className="logo" src="images/logo.png" alt='logo'/>
@@ -28,7 +33,8 @@ function NavBar () {
                 <li className="nav-item nav-link ">Rebozados</li>
               </Link>
             </ul>
-            <CartWidget/>
+            <LoginWidget/>
+            { cart.length === 0 ? '' : <CartWidget/>}
         </div>
       </div>
     </nav>

@@ -1,14 +1,17 @@
 import React from 'react'
 import { BiCart} from 'react-icons/bi'
-import {IoPersonOutline} from 'react-icons/io5'
 import { Link } from 'react-router-dom'
+import CartContext, { useCartContext } from '../../Context/cartContext'
 
 export const CartWidget = () => {
+
+  const { cartCount } = useCartContext(CartContext)
+
+
   return (
     <>
-      <IoPersonOutline className='icon'/>
-      <Link to='/Cart'>
-        <BiCart  className='icon'/>
+      <Link to='/Cart' style={{textDecoration: 'none',}} className='icon'> {cartCount()}      
+        <BiCart />
       </Link>
     </>
   )

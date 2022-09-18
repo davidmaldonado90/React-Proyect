@@ -19,15 +19,15 @@ const ItemDetailContainer = () => {
         getProductos()
         .then(response => setItem(response))
         .catch(err => console.error(err))
-    },[]);
+    },);
 
     return (
         <>
             {
               item ? <ItemDetail item= {item}/> : 
               <div className="d-flex justify-content-center">
-                <strong className='text-primary'>Loading...</strong>
-                <div className="spinner-grow ml-auto text-primary" style={{width: '5rem', height: '5rem'}} role="status" aria-hidden="true"></div>
+                <strong className='text-dark fs-4'>Loading...</strong>
+                <div className="spinner-grow ml-auto text-black" style={{width: '5rem', height: '5rem'}} role="status" aria-hidden="true"></div>
               </div>
             }
         </>
