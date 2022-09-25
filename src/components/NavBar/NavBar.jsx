@@ -23,13 +23,13 @@ function NavBar () {
               <Link style={{ textDecoration: 'none' }} to='/'>
                 <li className="nav-item nav-link ">Home</li>
               </Link>
-              <Link style={{ textDecoration: 'none' }} to='/categoria/Fresco'>
+              <Link style={{ textDecoration: 'none' }} to='/categoria/fresco'>
                 <li className="nav-item nav-link ">Fresco</li>
               </Link>
-              <Link style={{ textDecoration: 'none' }} to='/categoria/Congelado'>
+              <Link style={{ textDecoration: 'none' }} to='/categoria/congelado'>
                 <li className="nav-item nav-link ">Congelado</li>
               </Link>
-              <Link style={{ textDecoration: 'none' }} to='/categoria/Rebozado'>
+              <Link style={{ textDecoration: 'none' }} to='/categoria/cebozado'>
                 <li className="nav-item nav-link ">Rebozados</li>
               </Link>
             </ul>
