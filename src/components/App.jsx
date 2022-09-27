@@ -7,6 +7,7 @@ import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
 import { Cart } from './Cart/Cart';
 import CartContext from '../Context/cartContext';
 import Login from './Login/Login';
+import { Form } from './Form/Form';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path='/detalles/:id' element={<ItemDetailContainer/>}/>   
             <Route path='/Cart' element= {<Cart/>}/>
             <Route path='/Login' element= {<Login/>}/>
+            <Route path='/Form' element= {<Form/>}/>
 
           </Routes>
           

@@ -4,13 +4,13 @@ import '../Item/Item.css'
 
 const Item = ({item}) => {
 
-    const {nombre,precio, imagen, id} = item
+    const {nombre,precio, img, id} = item
     
     return ( 
         
             <div className='cardContainer m-auto mt-3'>
                 <div className="cardItem ">
-                    <img className='cardImage rounded-4 ' src={imagen} alt={nombre}/>
+                    <img className='cardImage rounded-4 ' src={img} alt={nombre}/>
                 </div>
                 <div className="card-body">
                     <p className="card-text">{nombre}</p>

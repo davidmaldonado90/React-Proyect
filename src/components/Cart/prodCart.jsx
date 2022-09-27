@@ -11,7 +11,7 @@ const ProdCart = ({el}) => {
         <div className='container'>
             
             <div className='row text-center m-auto p-4 d-flex align-items-center'>           
-                    <div className='col fs-3'><img src={el.imagen} style={{width: '150px', height: '150px'}} alt={el.nombre} /></div>
+                    <div className='col fs-3'><img src={el.img} style={{width: '150px', height: '150px'}} alt={el.nombre} /></div>
                     <div className='col fs-3'>{el.nombre}</div>
                     <div className='col fs-3'>Cantidad {el.quantity}</div>
                     <div className='col fs-3'>$ {el.precio}</div>

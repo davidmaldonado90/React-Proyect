@@ -1,4 +1,4 @@
-import React, {useState, } from 'react';
+import React, {useState } from 'react';
 import { Link } from 'react-router-dom';
 import Counter from '../Counter/Counter';
 import {useCartContext} from '../../Context/cartContext';
@@ -9,7 +9,7 @@ const ItemDetail = ({item}) => {
     
     const { addItem }  = useCartContext()
     
-    const {nombre, precio, imagen, stock} = item
+    const {nombre, precio, img, stock} = item
    
     const onAdd = (quantity) => {
         setadd (true)
@@ -23,7 +23,7 @@ const ItemDetail = ({item}) => {
             <div className="card bg-transparent border-0 container col-sm-11">
                 <div className="row">
                     <div className="col-md-3">
-                        <img src={imagen} className="img-fluid rounded-start" alt={nombre} />
+                        <img src={img} className="img-fluid rounded-start" alt={nombre} />
                     </div>
                     <div className="col-sm-11 text-center p-5 col-md-5">
                         <div className="card-body">
