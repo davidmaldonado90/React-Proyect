@@ -29,7 +29,7 @@ function NavBar () {
               <Link style={{ textDecoration: 'none' }} to='/categoria/congelado'>
                 <li className="nav-item nav-link ">Congelado</li>
               </Link>
-              <Link style={{ textDecoration: 'none' }} to='/categoria/cebozado'>
+              <Link style={{ textDecoration: 'none' }} to='/categoria/rebozado'>
                 <li className="nav-item nav-link ">Rebozados</li>
               </Link>
             </ul>

@@ -1,59 +1,87 @@
+import { addDoc,collection } from 'firebase/firestore';
 import React, {useState} from 'react'
-import { useForm } from 'react-hook-form'
 import { useCartContext } from '../../Context/cartContext';
+import { db } from '../Firebase/config';
 
 export const Form = () => {
 
-    const { cart }  = useCartContext()
+    const { cart, price, clear}  = useCartContext()
+
+    const [orderId, setorderId] = useState();
+
     const [buyer, setbuyer] = useState({
         nombre:'',
         email:'',
         telefono:''
     });
 
-    const {nombre, email, telefono} = buyer
+    const {nombre, email, telefono } = buyer
 
-    const handleInputChange = (e) => {
-        setbuyer({
-            ...buyer,
-            [e.target.name]: e.target.value
-        })
+    const createOrder = async(data) =>{
+        try {
+            const col = collection(db, "Orders")
+            const order = await addDoc(col, data) 
+            console.log("orden numero", order);
+            setorderId(order.id)
+            clear()
+
+        } catch (error) {
+            console.error(error);
+        }
     }
-    
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const handleInputChange = ({target: {name, value}}) => {
+        setbuyer({...buyer, [name]: value})
+        }
 
-    const onSubmit = (data) => {
 
-        console.log(data);
+    const handleSubmit = e => {
+        e.preventDefault()
+        const items = cart.map(el => {
+                            return {
+                                    id:el.id, nombre: el.nombre, precio: el.precio, cantidad: el.quantity}})
+        const day = new Date() 
+        const total = price()
+        const data = {buyer, items, day , total}
+        console.log('data', data);
+        createOrder(data)
 
     }
 
   return (
-            <div>
+    <>
+            {
+                !orderId?
+
+                <div>
                 <h2>Finalizar Compra</h2>                
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit}>
+
                     <div>
                         <label>Nombre</label>
-                        <input type="text" 
-                        /*{...register('nombre', {required: true})} */
-                        value={nombre} 
-                        onChange={handleInputChange} />
-                        {/* {errors.nombre?.type === 'required' && <span>El campo nombre es requerido</span>} */}
+                        <input type="text"
+                                name='Nombre'
+                                placeholder='Nombre'
+                                value={nombre}
+                                onChange={handleInputChange} />
                     </div>
 
                     <div>
                         <label>Email</label>
-                        <input type="text" 
-                        /*{...register('email', {
-                            pattern: /^(([^<>()[].,;:\s@"]+(.[^<>()[].,;:\s@"]+)*)|(".+"))@(([^<>()[].,;:\s@"]+.)+[^<>()[].,;:\s@"]{2,})$/})} */
-                            value={email} onChange={handleInputChange}/>
-                        {/* {errors.email?.type === 'pattern' && <span>El formato del email es incorrecto</span>} */}
+                        <input type="text"
+                                name='Email'
+                                placeholder='Email'
+                                value={email}
+                                onChange={handleInputChange}/>
                     </div>
 
                     <div>
                         <label>Telefono</label>
-                        <input type="text" {...register('telefono')} value={telefono} onChange={handleInputChange}/>
+                        <input type="text" 
+                                name='Telefono'
+                                placeholder='Telefono'
+                                value={telefono}
+                                onChange={handleInputChange}/>
                     </div>
 
                     <div>
@@ -61,6 +89,8 @@ export const Form = () => {
                     </div>
                 </form>
             </div>
+            : <h4>Su orden de compra es: {orderId}</h4> }
+            </>
     
   )
 }
