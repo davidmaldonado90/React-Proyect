@@ -1,29 +1,23 @@
 import React from 'react';
-import Swal from 'sweetalert2';
 import { useCartContext } from '../../Context/cartContext';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../Context/authContext';
 
 const CartEnd = () => {
 
-  const { price} = useCartContext()
+  const {user} = useAuth()
 
-  const checkout = () => {
-    Swal.fire({
-      title: 'Gracias por su compra',
-      icon: 'success',
-      text: `total a abonar $ ${price()}`
-    })
+  const {price } = useCartContext()
 
-
-  }
 
   return (
     <>
       <div className='d-flex align-items-end flex-column mb-3'>
         <div className='me-4 p-2 fs-3'>Precio Total ${price ()}</div>
           <div className='me-4 p-2 fs-3'>
-            <Link to='/Form'>Finalizar Compra</Link>
-            {/* <button className=' p-2 btn btn-dark' onClick={checkout}>Finalizar Compra</button> */}
+            {!user ? <Link to='/login' className='btn btn-dark'>Finalizar Compra</Link> 
+            : <Link to='/Form' className='btn btn-dark'>Finalizar Compra</Link>}
+            
           </div>
       </div>
     </>

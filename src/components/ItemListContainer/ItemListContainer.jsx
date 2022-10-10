@@ -14,19 +14,6 @@ export const ItemListContainer = () => {
   const [products, setProducts] = useState()
   const [load, setLoad] = useState(true)
 
-  
-  // useEffect(() => {
-  // const getData = () => new Promise((res,) => {
-
-  //   categoria ? setTimeout(() => res(productos.filter (el => el.tipo === categoria)), 1000) : setTimeout(() => res(productos), 1000);
-  
-  //   }
-  // )
-  //   getData()
-  //   .then(response => setProducts(response))
-  //   .catch(err => console.error(err))
-  //   }, [categoria]);
-
   const getData = async (categoria) =>{
     try{
 

@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
+  apiKey: "AIzaSyABu4hVa6ux9PUC_fmBIxibLQw3wxpOvl0",
   authDomain: "reactfristproyect.firebaseapp.com",
   projectId: "reactfristproyect",
   storageBucket: "reactfristproyect.appspot.com",
@@ -15,5 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
+export const auth = getAuth(app)
 
 

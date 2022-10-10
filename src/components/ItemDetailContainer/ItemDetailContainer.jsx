@@ -26,20 +26,7 @@ const selectItem = async (idProducto) => {
 
     useEffect(() => {
         selectItem(id)
-    }, []);
-
-
-    // const getProductos = () => new Promise((res,) => {
-    //     setTimeout(() => res(productos.find(prod => prod.id === Number(id)))
-    //     , 2000);
-        
-    // })
-    
-    // useEffect(() => {
-    //     getProductos()
-    //     .then(response => setItem(response))
-    //     .catch(err => console.error(err))
-    // },);
+    }, [id]);
 
     return (
         <>

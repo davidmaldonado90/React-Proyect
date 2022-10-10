@@ -36,9 +36,12 @@ const ItemDetail = ({item}) => {
                                 </Link>                               
                                 ) : (
                                 <Counter stock = {stock} initial = {1} onAdd={onAdd}/>)}
-                                <Link to='/'className='btn btn-dark'>
+                                <div>
+                                <Link to='/'className='btn btn-dark mt-2'>
                                     Seguir Comprando
                                 </Link>  
+
+                                </div>
                             </div>
                         </div>
                     </div>

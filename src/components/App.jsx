@@ -8,13 +8,16 @@ import { Cart } from './Cart/Cart';
 import CartContext from '../Context/cartContext';
 import Login from './Login/Login';
 import { Form } from './Form/Form';
+import Register from './Register/Register';
+import AuthProvider from '../Context/authContext';
+import LoginView from './Login/LoginView';
+import { ProtectedRoute } from './ProtectedRoute/ProtectedRoute';
 
 
 function App() {
-
-  
   return (
     <>
+    <AuthProvider>
       <CartContext>
         <BrowserRouter>
         <div className='app row'>
@@ -29,12 +32,23 @@ function App() {
             <Route path='/Cart' element= {<Cart/>}/>
             <Route path='/Login' element= {<Login/>}/>
             <Route path='/Form' element= {<Form/>}/>
+            <Route path='/Register' element= {<Register/>}/>
+            
+            
+            <Route 
+                path='/LoginView' 
+                element= {
+                  <ProtectedRoute>
+                <LoginView/>
+                </ProtectedRoute>}/>
+            
 
           </Routes>
           
         </div>
         </BrowserRouter>
       </CartContext>
+    </AuthProvider>
     </>
     
     );
