@@ -1,6 +1,6 @@
 # Hi i'm David Maldonado
 
-This project was created with React Js
+This project was created with React Js, Bootstrap and Firebase.
 
 ## Project presentation
 
@@ -14,7 +14,7 @@ If you are logged in, you will be redirected to a form to complete the purchase 
 
 ### Images of  Proyect
 
-![alt text](https://github.com/davidmaldonado90/React-Proyect/blob/main/public/images/2022-10-11%20.png)
+![alt text](https://github.com/davidmaldonado90/React-Proyect/blob/main/public/images/2022-10-11.png)
 
 ![alt text](https://github.com/davidmaldonado90/React-Proyect/blob/main/public/images/2022-10-11%20(1).png)
 
@@ -33,10 +33,28 @@ If you are logged in, you will be redirected to a form to complete the purchase 
 ![alt text](https://github.com/davidmaldonado90/React-Proyect/blob/main/public/images/2022-10-11%20(8).png)
 
 
-### project made with con React V18.2 
+### Project made with React V18.2 
 
-To install the project => npm install 
+To install the project  npm install 
 
-To start the project => npm start
+To start the project  npm start
+
+## Installed Dependencies
+
 
 ### Backend Service Firebase V9.10
+
+Used for database and authentication
+
+### SweetAlert
+
+Used for Alerts
+
+### React-Router-Dom
+
+Used for dynamic routes
+
+### React-Icons
+
+Used for Icons
+
