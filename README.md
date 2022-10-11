@@ -8,7 +8,8 @@ https://github.com/davidmaldonado90/React-Proyect/blob/main/public/images/gif.gi
 
 ### Images of  Proyect
 
-https://github.com/davidmaldonado90/React-Proyect/blob/main/public/images/2022-10-11%20(1).png
+![alt text](https://github.com/davidmaldonado90/React-Proyect/blob/main/public/images/2022-10-11%20(1).png)
+
 https://github.com/davidmaldonado90/React-Proyect/blob/main/public/images/2022-10-11%20(2).png
 
 ### `npm test`
