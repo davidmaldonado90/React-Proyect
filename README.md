@@ -1,18 +1,15 @@
-# Getting Started with Create React App
+# Hi i'm David Maldonado
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with React Js
 
-## Available Scripts
+## Navigation Gif 
 
-In the project directory, you can run:
+https://github.com/davidmaldonado90/React-Proyect/blob/main/public/images/gif.gif
 
-### `npm start`
+### Images of  Proyect
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+https://github.com/davidmaldonado90/React-Proyect/blob/main/public/images/2022-10-11%20(1).png
+https://github.com/davidmaldonado90/React-Proyect/blob/main/public/images/2022-10-11%20(2).png
 
 ### `npm test`
 
