@@ -1,10 +1,15 @@
 import React, {useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { useAuth } from '../../Context/authContext';
+import { useCartContext } from '../../Context/cartContext';
 const Login = () => {
     
     const { signIn } = useAuth();
 
+    const { cart } = useCartContext()
+
+    const [error, setError] = useState();
 
     const [user, setUser] = useState({
     email:'',
@@ -20,13 +25,50 @@ const Login = () => {
     }
 
     const handleSubmit = async e => {
-        e.preventDefault()
+        e.preventDefault();
+        setError();
         try {
             await signIn(user.email, user.password)
-            navigate('/')
-        } catch (error) {
-            console.error(error);
-        }
+            if(cart.length <= 0){
+                navigate('/form')
+            }
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: toast => {
+                  toast.addEventListener('click', () => {
+                    Swal.close();
+                  });
+                },
+              });
+              Toast.fire({
+                icon: 'success',
+                title: `Bienvenido: ${user.email}`,
+              });
+            navigate('/');
+        } 
+          catch (error) {
+            setError(error.message)
+
+            if (error.code === 'auth/user-not-found') {
+                setError('Usuario no Registrado');
+              }
+              if (error.code === 'auth/wrong-password') {
+                setError('Contraseña incorrecta');
+              }
+              if (error.code === 'auth/invalid-email') {
+                setError('Email inválido');
+              }
+              if (error.code === 'auth/too-many-requests') {
+                setError('Demasiados intentos, intente más tarde');
+              }
+              if (error.code === 'auth/internal-error') {
+                setError('Debe completar todos los campos');
+              }
+          }
     }
 
     return (
@@ -55,6 +97,8 @@ const Login = () => {
                                             onChange={handleChange}/>
                             </div>
                             <div className="text-center">
+
+                                {error && <p><strong>{error}</strong></p>}
                                 <p>¿Ya tenes cuenta?</p>
                                 
                                 <button type="submit" className="btn btn-dark px-1 mb-1 w-100">Iniciar Sesion</button>

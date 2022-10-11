@@ -12,11 +12,15 @@ const LoginWidget = () => {
         {!user ?
             <Link to='/Login'>
                 <IoPersonOutline className='icon'/>
+                
             </Link> 
                      : 
-            <Link to='/LoginView'>
-                <IoPersonOutline className='icon'/>
-            </Link> }
+            
+                <Link to='/LoginView' style={{ textDecoration: 'none', color:'grey' }}>
+                <span className='p-3'  >Ir a mi Perfil</span>
+                    
+                </Link> 
+            }
         </>
     );
 }

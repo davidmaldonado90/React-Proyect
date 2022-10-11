@@ -41,10 +41,6 @@ export const Form = () => {
         })
     }
 
-    
-      
-
-
     const Submit = e => {
         e.preventDefault()
         if (
@@ -74,7 +70,18 @@ export const Form = () => {
         }
     }
 
+    const checkout = () =>{
+        Swal.fire({
+            icon: 'success',
+            title: 'Gracias por su compra!',
+            text: `El ID de su pedido es: ${orderId}, pronto recibira un correo para coordinar la entrega`,
+            timer: 3000,
+        })
+        setTimeout(() => {
+             navigate('/')
+        }, 3500);
     
+    }
 
   return (
     <>
@@ -86,8 +93,8 @@ export const Form = () => {
                     <div className="col-md-6 offset-md-3">
                 <h2 className="text-center text-dark mt-5">Finalizar Compra</h2>                
                 <div className="card my-5">
-                <form onSubmit={Submit} className="card-body cardbody-color p-lg-5">
-
+                <h4 className="text-center text-dark mt-5">Completar formulario con datos para la entrega</h4>
+                <form onSubmit={Submit} className="card-body cardbody-color p-lg-5">            
                     <div className="mb-3">                        
                         <input type="text"
                         className="form-control"
@@ -134,19 +141,17 @@ export const Form = () => {
         </div>
             
             : 
-            <div className='container'>
-                <div>
-
-                <p>Gracias por su compra {nombre}</p>
-                <p>Su orden de compra es: {orderId}</p>
-                {setTimeout(() => {
-                    navigate('/')
-                }, 4000)}
-
-                </div>
+            <div>
+                {checkout()}
             </div>
+                
+                
             }
-            </>
+            
+
+</>
     
   )
 }
+
+

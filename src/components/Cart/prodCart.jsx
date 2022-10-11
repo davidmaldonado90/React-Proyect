@@ -17,7 +17,7 @@ const ProdCart = ({el}) => {
                     </div>
 
                     <div className='col fs-3'>{el.nombre}</div>
-                    <div className='col fs-3'>Cantidad {el.quantity}</div>
+                    <div className='col fs-3'>Cantidad: {el.quantity}</div>
                     <div className='col fs-3'>$ {el.precio}</div>
                     <div className='col fs-3'><FaTrash  onClick={() => removeElement(el.id)} /></div>
             </div>

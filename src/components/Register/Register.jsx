@@ -1,6 +1,7 @@
 import { addDoc, collection } from 'firebase/firestore';
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { useAuth } from '../../Context/authContext';
 import { db } from '../Firebase/config';
 
@@ -45,6 +46,22 @@ const Register = () => {
         try {
             await signUp(user.email, user.password)
             addUserDb(user)
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: toast => {
+                  toast.addEventListener('click', () => {
+                    Swal.close();
+                  });
+                },
+              });
+              Toast.fire({
+                icon: 'success',
+                title: 'Usuario Registrado Exitosamente',
+              });
             navigate('/loginView')
         } catch (error) {
             console.error(error);

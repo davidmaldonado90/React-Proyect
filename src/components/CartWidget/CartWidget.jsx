@@ -10,7 +10,7 @@ export const CartWidget = () => {
 
   return (
     <>
-      <Link to='/Cart' style={{textDecoration: 'none',}} className='icon'> {cartCount()}      
+      <Link to='/Cart' style={{textDecoration: 'none', color:'grey'}} className='icon'> {cartCount()}      
         <BiCart />
       </Link>
     </>

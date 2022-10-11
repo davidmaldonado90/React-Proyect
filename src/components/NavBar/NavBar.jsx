@@ -10,7 +10,7 @@ function NavBar () {
   
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase fs-4 rounded-6 me-4">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase fs-4 rounded-6 p-2 me-4">
         <div className="container-fluid">
             <Link to='/'>
               <img className="logo" src="images/logo.png" alt='logo'/>
