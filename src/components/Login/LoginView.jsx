@@ -10,6 +10,7 @@ const {  logOut, load} = useAuth()
 
 const navigate = useNavigate()
 
+//function to close session, with farewell alert
 const  handleLogOut = async () =>{
             await logOut();
               Swal.fire({
@@ -26,7 +27,7 @@ const  handleLogOut = async () =>{
 
     if (load) return <Spinner/>
 
-    
+    //profile render
     return (
         <>
         

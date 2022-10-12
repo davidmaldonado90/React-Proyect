@@ -3,8 +3,13 @@ import '../Counter/Counter.css'
 
 const Counter = ({stock, onAdd, initial}) => {
 
+
+    // state of count initial value = 1 
+
     const[count, setCount] = useState(initial)
 
+
+    //function to add o subtract quantity of products. if add or substract set the count with the new value.
     const quantityProduct = (operation) =>{
         if(operation === "+"){
             if(count < stock){

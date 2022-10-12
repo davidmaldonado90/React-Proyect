@@ -8,6 +8,8 @@ function NavBar () {
 
   const { cart } = useCartContext(CartContext);
   
+  // navbar with conditional rendering. if the cart is empty the icon is not show
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase fs-4 rounded-6 p-2 me-4">

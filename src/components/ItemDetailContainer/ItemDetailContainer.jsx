@@ -12,6 +12,7 @@ const ItemDetailContainer = () => {
     const [item, setItem] = useState();
     const [load, setLoad] = useState(true)
 
+    //function to get a product in the database collection. then set the product status to the response result.
 const selectItem = async (idProducto) => {
     try {
         const document = doc(db, "productos", idProducto )
@@ -23,7 +24,7 @@ const selectItem = async (idProducto) => {
         console.error(error);
     }
 }
-
+//hook that is executed after the component has been mounted to the DOM, and then executes the selectitem function.
     useEffect(() => {
         selectItem(id)
     }, [id]);

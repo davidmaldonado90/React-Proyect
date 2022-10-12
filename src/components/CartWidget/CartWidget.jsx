@@ -5,7 +5,7 @@ import CartContext, { useCartContext } from '../../Context/cartContext'
 
 export const CartWidget = () => {
 
-  const { cartCount } = useCartContext(CartContext)
+  const { cartCount } = useCartContext(CartContext) //destructuring cart context  calling the count of products in cart
 
 
   return (

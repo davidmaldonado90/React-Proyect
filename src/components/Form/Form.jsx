@@ -7,10 +7,11 @@ import { db } from '../Firebase/config';
 
 export const Form = () => {
 
-    const { cart, price, clear}  = useCartContext()
+    const { cart, price, clear}  = useCartContext() //destructuring cart context calling cart, totalprice and clearcart
 
-    const [orderId, setorderId] = useState();
+    const [orderId, setorderId] = useState(); // state of buyer order
 
+    // state of buyer
     const [buyer, setbuyer] = useState({
         nombre:'',
         email: '',
@@ -18,10 +19,14 @@ export const Form = () => {
         direccion: ''
     });
 
+    //destructuring buyer props
+
     const {nombre, email, telefono, direccion } = buyer
 
-    const navigate = useNavigate()
+    const navigate = useNavigate() //calling the hook usenavigate
 
+
+    // asynchronous function that takes data as a parameter and creates a new order in the database, sets the orderId state of the order, and then cleans the cart 
     const createOrder = async(data) =>{
         try {
             const col = collection(db, "Orders")
@@ -33,14 +38,14 @@ export const Form = () => {
             console.error(error);
         }
     }
-
+//function for the user to type in the input field, that value is set to the buyer object.
     const handleInputChange = (e) => {
         setbuyer({
             ...buyer,
             [e.target.name]: e.target.value
         })
     }
-
+    //function that prevents the page from refreshing when the form is updated, assigns the cart array to a new array of objects, creates a new date, calculates the total, and then generates the order. 
     const Submit = e => {
         e.preventDefault()
         if (
@@ -70,6 +75,7 @@ export const Form = () => {
         }
     }
 
+    //function with successful alert that shows the order number
     const checkout = () =>{
         Swal.fire({
             icon: 'success',
@@ -83,6 +89,8 @@ export const Form = () => {
     
     }
 
+
+    //purchase form with conditional rendering, if there is no order generated, the form is displayed. if there is an order generated, the checkout function is called 
   return (
     <>
             {

@@ -5,12 +5,14 @@ import {useCartContext} from '../../Context/cartContext';
 
 const ItemDetail = ({item}) => {
     
-    const [add, setadd] = useState(false);
+    const [add, setadd] = useState(false); 
     
     const { addItem }  = useCartContext()
     
     const {nombre, precio, img, stock} = item
    
+
+    //function that adds a product to the cart
     const onAdd = (quantity) => {
         setadd (true)
         addItem(item, quantity);
@@ -18,6 +20,8 @@ const ItemDetail = ({item}) => {
         item.stock = stock
       }
 
+
+      //detail of the selected product, if a product is added to the cart, the add button is deleted and a button is rendered that redirects to the cart component
     return (
         <>
             <div className="card bg-transparent border-0 container col-sm-11">

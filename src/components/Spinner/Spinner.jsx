@@ -1,5 +1,6 @@
 import React from 'react';
 
+//loading spinner component
 const Spinner = () => {
     
     return (

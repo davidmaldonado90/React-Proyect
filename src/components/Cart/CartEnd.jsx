@@ -5,11 +5,12 @@ import { useAuth } from '../../Context/authContext';
 
 const CartEnd = () => {
 
-  const {user} = useAuth()
+  const {user} = useAuth() // destructuring user authentication, calling user
 
-  const {price } = useCartContext()
+  const {price } = useCartContext() // destructuring cart context, calling the final price
 
-
+// component to render the total price of the purchase. 
+// if the user is not logged, redirects you to the login component, else redirects you to the purchase form.
   return (
     <>
       <div className='d-flex align-items-end flex-column mb-3'>

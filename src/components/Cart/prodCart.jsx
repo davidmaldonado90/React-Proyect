@@ -4,9 +4,9 @@ import { useCartContext } from '../../Context/cartContext';
 
 const ProdCart = ({el}) => {
 
-    const { removeElement } = useCartContext()
+    const { removeElement } = useCartContext() //destructuring cart context calling the function to delete product 
 
-
+// view of each product in the cart
     return (
         <>
         <div className='container-fluid'>

@@ -25,11 +25,11 @@ const Login = () => {
     }
 
     const handleSubmit = async e => {
-        e.preventDefault();
+        e.preventDefault(); 
         setError();
         try {
-            await signIn(user.email, user.password)
-            if(cart.length <= 0){
+            await signIn(user.email, user.password) // The login function is called
+            if(cart.length <= 0){ 
                 navigate('/form')
             }
             const Toast = Swal.mixin({
@@ -51,6 +51,7 @@ const Login = () => {
             navigate('/');
         } 
           catch (error) {
+            //// check if the error code. If so, it will set the error state to the error message being transmitted.
             setError(error.message)
 
             if (error.code === 'auth/user-not-found') {

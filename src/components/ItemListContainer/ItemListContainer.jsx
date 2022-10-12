@@ -14,6 +14,7 @@ export const ItemListContainer = () => {
   const [products, setProducts] = useState()
   const [load, setLoad] = useState(true)
 
+//async function, If category is true, it will query the database for the products collection, and if category is false, it will get the products collection from the database.
   const getData = async (categoria) =>{
     try{
 
@@ -27,7 +28,7 @@ export const ItemListContainer = () => {
       console.error(error);
     }
   }
-
+  // hook that is executed after the component has been mounted to the DOM, and then executes the getData function.
   useEffect(() => {
     getData(categoria)
   }, [categoria]);

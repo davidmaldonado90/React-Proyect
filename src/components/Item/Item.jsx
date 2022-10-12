@@ -4,8 +4,10 @@ import '../Item/Item.css'
 
 const Item = ({item}) => {
 
-    const {nombre,precio, img, id} = item
+    const {nombre,precio, img, id} = item //destructuring item
     
+
+    // rendering of each product with its properties, with a button that redirects to the product detail component 
     return ( 
         
             <div className='cardContainer m-auto mt-3'>
@@ -15,7 +17,8 @@ const Item = ({item}) => {
                 <div className="card-body">
                     <p className="card-text">{nombre}</p>
                     <p>Precio: $ {precio}</p>
-                    <Link className='btn btn-dark' to={`/detalles/${id}`}>Ver Detalle</Link>
+                    
+                    <Link className='btn btn-dark' to={`/detalles/${id}`}>Ver Detalle</Link> 
                 </div>
             </div>
         

@@ -7,6 +7,7 @@ const LoginWidget = () => {
 
     const {user } = useAuth()
 
+    //render of profile widget, if there is no user the icon is shown, if there is a user the text is shown go to my profile
     return (
         <>
         {!user ?

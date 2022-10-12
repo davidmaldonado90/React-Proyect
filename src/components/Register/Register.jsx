@@ -9,9 +9,9 @@ const Register = () => {
     
     const { signUp } = useAuth();
 
-    const navigate = useNavigate()
+    const navigate = useNavigate() //Hook to navigate between routes
 
-    const [user, setUser] = useState({
+    const [user, setUser] = useState({ //state for user data
     email:'',
     password:'',
     nombre: '',
@@ -19,16 +19,17 @@ const Register = () => {
     direccion:''
 });
 
-    const {email, password, nombre, apellido, direccion} = user
+    const {email, password, nombre, apellido, direccion} = user //destructuring user
 
 
     const handleChange = ({target: {name, value}}) => {
         setUser({...user, [name]: value})
     }
-
+//
+// Function to add a user to the database
     const addUserDb = async data => {
         try {
-          await addDoc(collection(db, `users`), data);
+          await addDoc(collection(db, `users`), data);  // Add the user to the users collection
           setUser({
             email:'',
             password:'',
@@ -44,9 +45,9 @@ const Register = () => {
     const handleSubmit = async e => {
         e.preventDefault()
         try {
-            await signUp(user.email, user.password)
-            addUserDb(user)
-            const Toast = Swal.mixin({
+            await signUp(user.email, user.password)  // The user is registered
+            addUserDb(user)// Add the user to the database
+            const Toast = Swal.mixin({ //successful registration alert
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,

@@ -6,7 +6,12 @@ import CartEnd from './CartEnd'
 
 export const Cart = () => {
 
+  //destructuring cart context calling cart
+
   const { cart } = useCartContext() 
+
+
+  //empty cart rendering
 
   if (cart.length === 0) {
     return (
@@ -22,6 +27,9 @@ export const Cart = () => {
       </>
     );
   }
+
+
+  //rendering of products in cart
 
   return (
     <>
